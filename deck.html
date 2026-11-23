@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Huésped Siempre Estelar · Propuesta · Aquiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Tokens del Aquiva Design System (colors_and_type.css, v2026.6.13). */
+    :root {
+      --aq-blue: #5A99E6;
+      --aq-blue-deep: #003286;
+      --aq-blue-light: #CEE0F8;
+      --aq-blue-bg-soft: #F3F8FE;
+      --aq-purple: #352694;
+      --aq-purple-deep: #0C1F4F;
+      --aq-violet-light: #E3E8FD;
+      --aq-pink: #E01F6F;
+      --aq-pink-light: #FDE2EE;
+      --aq-peach-light: #FFD2A9;
+      --aq-orange: #ED7F20;
+      --aq-cream: #F9F5F0;
+      --aq-ink: #423C4C;
+      --aq-gray: #737474;
+      --aq-gray-mid: #9E9E9E;
+      --aq-bg: #F6F7F9;
+      --aq-bg-alt: #EFEFF4;
+      --aq-white: #FFFFFF;
+      --aq-grad-deep: linear-gradient(135deg, #0C1F4F 0%, #352694 100%);
+      --aq-photo-overlay: linear-gradient(135deg, rgba(90,153,230,0.55), rgba(53,38,148,0.55));
+      --fg-1: var(--aq-ink);
+      --fg-2: var(--aq-gray);
+      --fg-3: var(--aq-gray-mid);
+      --border-subtle: #E7E9EE;
+      --on-dark-1: #FFFFFF;
+      --on-dark-2: rgba(255,255,255,0.78);
+      --on-dark-3: rgba(255,255,255,0.52);
+      --shadow-sm: 0 2px 6px rgba(53, 38, 148, 0.08);
+      --shadow-md: 0 8px 24px rgba(53, 38, 148, 0.10);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Open Sans", system-ui, -apple-system, sans-serif;
+      background: var(--aq-bg-alt);
+      color: var(--fg-1);
+      line-height: 1.6;
+    }
+    h1, h2, h3, .lexend { font-family: "Lexend", "Segoe UI", system-ui, sans-serif; }
+
+    .slide {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 8vh 7vw;
+      background: var(--aq-bg);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .slide:nth-of-type(even) { background: var(--aq-white); }
+
+    .eyebrow {
+      font-family: "Lexend", sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--aq-blue); font-weight: 500; margin-bottom: 1.2rem;
+    }
+    .slide.dark .eyebrow { color: var(--aq-blue); }
+    h1 {
+      font-weight: 300; font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      line-height: 1.12; color: var(--on-dark-1); letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+    h2 {
+      font-weight: 300; font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+      line-height: 1.15; color: var(--aq-purple-deep); margin-bottom: 1rem;
+      letter-spacing: -0.01em; text-wrap: balance;
+    }
+    .slide.dark h2 { color: var(--on-dark-1); }
+    h1 em, h2 em { font-style: normal; color: var(--aq-pink); }
+    .lead { font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--fg-2); max-width: 46rem; }
+    .slide.dark .lead { color: var(--on-dark-2); }
+
+    .punchline {
+      margin-top: 2.2rem; padding: 1.2rem 1.6rem;
+      border-left: 3px solid var(--aq-pink); background: var(--aq-white);
+      border-radius: 0 14px 14px 0; box-shadow: var(--shadow-sm);
+      font-family: "Lexend", sans-serif; font-weight: 400;
+      font-size: clamp(1rem, 1.6vw, 1.25rem); color: var(--aq-purple-deep);
+      max-width: 46rem;
+    }
+    .slide.dark .punchline { background: rgba(255,255,255,0.07); color: var(--on-dark-1); box-shadow: none; }
+
+    .live {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid var(--aq-blue); color: var(--aq-blue-deep);
+      background: var(--aq-blue-bg-soft);
+      font-family: "Lexend", sans-serif;
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 0.4rem 1.1rem; margin-bottom: 1.6rem; width: fit-content;
+      border-radius: 999px; text-decoration: none; transition: box-shadow 0.2s;
+    }
+    a.live:hover { box-shadow: var(--shadow-md); }
+    .live .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--aq-pink); }
+    .live .ext { opacity: 0.7; }
+
+    .grid { display: grid; gap: 1rem; margin-top: 1.8rem; }
+    .g2 { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+    .g3 { grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+    .g4 { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
+    .card {
+      background: var(--aq-white); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 1.4rem 1.5rem; box-shadow: var(--shadow-sm);
+    }
+    .card h3 {
+      font-weight: 500; font-size: 1rem; color: var(--aq-purple-deep); margin-bottom: 0.45rem;
+    }
+    .card p { font-size: 0.9rem; color: var(--fg-2); line-height: 1.55; }
+    .card .big {
+      font-family: "Lexend", sans-serif; font-weight: 600;
+      font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--aq-purple);
+      line-height: 1.1; margin-bottom: 0.3rem; font-variant-numeric: tabular-nums;
+    }
+    .card .big.leak { color: var(--aq-pink); }
+
+    .chip {
+      display: inline-block; padding: 0.14rem 0.75rem; border-radius: 999px;
+      font-family: "Lexend", sans-serif;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.03em;
+    }
+    .chip.ota { background: var(--aq-pink-light); color: var(--aq-pink); }
+    .chip.direct { background: var(--aq-blue-light); color: var(--aq-blue-deep); }
+    .chip.partner { background: var(--aq-violet-light); color: var(--aq-purple); }
+
+    .statrow { display: flex; flex-wrap: wrap; gap: 2.6rem; margin-top: 2rem; }
+    .stat .n {
+      display: block; font-family: "Lexend", sans-serif; font-weight: 600;
+      font-size: clamp(1.9rem, 3.4vw, 2.9rem); color: var(--aq-purple);
+      font-variant-numeric: tabular-nums; line-height: 1.1;
+    }
+    .stat .n em { font-style: normal; color: var(--aq-pink); }
+    .slide.dark .stat .n { color: var(--on-dark-1); }
+    .stat .l {
+      font-family: "Lexend", sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--fg-3); font-weight: 500;
+    }
+    .slide.dark .stat .l { color: var(--on-dark-3); }
+
+    .foot-note { margin-top: 2rem; font-size: 0.8rem; font-style: italic; color: var(--fg-3); max-width: 50rem; }
+
+    /* Portada: foto con overlay de marca (--aq-photo-overlay) */
+    .slide.cover {
+      background: var(--aq-purple-deep) url("hero.jpg") center / cover no-repeat;
+      align-items: center; text-align: center;
+    }
+    .slide.cover::before {
+      content: ""; position: absolute; inset: 0;
+      background: var(--aq-photo-overlay);
+    }
+    .slide.cover::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(12,31,79,0.35), rgba(12,31,79,0.1) 40%, rgba(12,31,79,0.55));
+    }
+    .slide.cover > * { position: relative; z-index: 1; }
+    .cover .wordmark { height: 34px; margin-bottom: 3rem; }
+    .cover .sub {
+      font-family: "Lexend", sans-serif; font-weight: 300;
+      font-size: clamp(1.05rem, 2.2vw, 1.5rem); letter-spacing: 0.02em;
+      color: var(--on-dark-2); margin-top: 1.2rem;
+    }
+    .cover .credit {
+      margin-top: 2.8rem; font-family: "Lexend", sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--on-dark-2); font-weight: 500;
+    }
+    .cover .live { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.1); color: #fff; margin: 2rem auto 0; }
+
+    /* Personas */
+    .persona-hero {
+      display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; margin-top: 1.4rem;
+      background: var(--aq-white); border: 1px solid var(--border-subtle);
+      border-radius: 16px; padding: 2rem 2.2rem; box-shadow: var(--shadow-md);
+    }
+    .avatar {
+      width: 6.5rem; height: 6.5rem; border-radius: 50%; flex: 0 0 auto;
+      background: linear-gradient(135deg, var(--aq-blue), var(--aq-purple));
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      font-family: "Lexend", sans-serif; font-weight: 300; font-size: 2.2rem;
+    }
+    .avatar.sm { width: 3.4rem; height: 3.4rem; font-size: 1.1rem; }
+    .persona-hero .who { flex: 1; min-width: 16rem; }
+    .persona-hero .name { font-family: "Lexend", sans-serif; font-weight: 500; font-size: 1.3rem; color: var(--aq-purple-deep); }
+    .persona-hero .tagline { color: var(--aq-pink); font-style: italic; margin: 0.2rem 0 0.8rem; }
+    .persona-hero ul { list-style: none; }
+    .persona-hero li { padding: 0.22rem 0; color: var(--fg-2); font-size: 0.95rem; }
+    .persona-hero li strong { color: var(--aq-purple-deep); font-weight: 600; }
+
+    .cast { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin-top: 1.8rem; }
+    .cast .member {
+      background: var(--aq-white); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 1.2rem 1.3rem; box-shadow: var(--shadow-sm);
+    }
+    .cast .head { display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.6rem; }
+    .cast .name { font-family: "Lexend", sans-serif; font-weight: 500; color: var(--aq-purple-deep); }
+    .cast .role {
+      font-family: "Lexend", sans-serif; font-size: 0.68rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--aq-pink); font-weight: 500;
+    }
+    .cast p { font-size: 0.87rem; color: var(--fg-2); line-height: 1.5; }
+
+    /* Matemática CFO */
+    .mathline { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: stretch; margin-top: 1.8rem; }
+    .mathline .box {
+      flex: 1 1 12rem; background: var(--aq-white); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 1.2rem 1.3rem; text-align: center; box-shadow: var(--shadow-sm);
+    }
+    .mathline .op {
+      align-self: center; font-family: "Lexend", sans-serif; font-weight: 300;
+      font-size: 2rem; color: var(--aq-blue); padding: 0 0.3rem; flex: 0 0 auto;
+    }
+    .mathline .n {
+      font-family: "Lexend", sans-serif; font-weight: 600;
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem); color: var(--aq-purple);
+      font-variant-numeric: tabular-nums;
+    }
+    .mathline .box.loss .n { color: var(--aq-pink); }
+    .mathline .box.gain .n { color: var(--aq-blue-deep); }
+    .mathline .l {
+      font-family: "Lexend", sans-serif; font-size: 0.7rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--fg-3); margin-top: 0.3rem; font-weight: 500;
+    }
+
+    /* Estadías (Sarah) */
+    .stays { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.9rem; margin-top: 1.6rem; }
+    .stay {
+      background: var(--aq-white); border: 1px solid var(--border-subtle);
+      border-radius: 14px; padding: 1rem 1.1rem; box-shadow: var(--shadow-sm);
+    }
+    .stay .when {
+      font-family: "Lexend", sans-serif; font-size: 0.66rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--fg-3); font-weight: 500;
+    }
+    .stay .prop { font-family: "Lexend", sans-serif; font-weight: 500; font-size: 0.95rem; color: var(--aq-purple-deep); margin: 0.25rem 0; }
+    .stay .isle { font-size: 0.8rem; color: var(--fg-2); margin-bottom: 0.5rem; }
+
+    /* Tiers */
+    .ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; margin-top: 1.8rem; align-items: end; }
+    .rung {
+      background: var(--aq-white); border: 1px solid var(--border-subtle);
+      border-radius: 14px; border-top: 3px solid var(--aq-gray-mid);
+      padding: 1.2rem 1.3rem; box-shadow: var(--shadow-sm);
+    }
+    .rung.gold { border-top-color: var(--aq-orange); padding-top: 1.8rem; }
+    .rung.diamond { border-top-color: var(--aq-blue); padding-top: 2.4rem; }
+    .rung .tname { font-family: "Lexend", sans-serif; font-weight: 400; font-size: 1.5rem; color: var(--aq-purple-deep); }
+    .rung .req {
+      font-family: "Lexend", sans-serif; font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--aq-blue-deep); font-weight: 500; margin: 0.3rem 0 0.6rem;
+    }
+    .rung p { font-size: 0.85rem; color: var(--fg-2); }
+
+    /* Earning */
+    .versus { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin-top: 1.8rem; }
+    .versus .side {
+      padding: 1.5rem 1.6rem; border: 1px solid var(--border-subtle);
+      border-radius: 14px; background: var(--aq-white); box-shadow: var(--shadow-sm);
+    }
+    .versus .side.win { border: 2px solid var(--aq-blue); }
+    .versus .rate {
+      font-family: "Lexend", sans-serif; font-weight: 600;
+      font-size: clamp(2rem, 4vw, 3rem); color: var(--aq-purple);
+      font-variant-numeric: tabular-nums;
+    }
+    .versus .rate small { font-size: 1rem; color: var(--fg-3); font-weight: 400; }
+    .versus .note { font-size: 0.88rem; color: var(--fg-2); margin-top: 0.4rem; }
+
+    /* Ofertas */
+    .offer-card {
+      background: var(--aq-white); border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--aq-blue); border-radius: 0 14px 14px 0;
+      padding: 1.2rem 1.3rem; box-shadow: var(--shadow-sm);
+    }
+    .offer-card h3 { font-weight: 500; font-size: 0.95rem; color: var(--aq-purple-deep); }
+    .offer-card .why { font-size: 0.84rem; font-style: italic; color: var(--fg-2); margin-top: 0.4rem; line-height: 1.5; }
+
+    /* Slides oscuras */
+    .slide.dark { background: var(--aq-grad-deep); color: var(--on-dark-1); }
+    .slide.dark .card { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); box-shadow: none; }
+    .slide.dark .card h3 { color: var(--on-dark-1); }
+    .slide.dark .card p { color: var(--on-dark-2); }
+    .slide.dark .card .big { color: #9DBDF0; }
+    .slide.dark .card .big.leak { color: #F27BAD; }
+    .slide.dark .foot-note { color: var(--on-dark-3); }
+
+    /* Timeline */
+    .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .phase {
+      border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.06);
+      border-radius: 14px; padding: 1.4rem 1.5rem;
+    }
+    .phase .ph {
+      font-family: "Lexend", sans-serif; font-size: 0.66rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: #9DBDF0; font-weight: 500;
+    }
+    .phase h3 { font-weight: 400; font-size: 1.45rem; margin: 0.4rem 0 0.6rem; color: var(--on-dark-1); }
+    .phase p { font-size: 0.87rem; color: var(--on-dark-2); line-height: 1.55; }
+
+    /* Wordmark y paginación */
+    .slide-mark { position: absolute; bottom: 1.2rem; left: 1.6rem; height: 16px; opacity: 0.75; }
+    .pagenum {
+      position: absolute; bottom: 1.2rem; right: 1.6rem;
+      font-family: "Lexend", sans-serif; font-size: 0.68rem; letter-spacing: 0.14em;
+      color: var(--fg-3); font-variant-numeric: tabular-nums;
+    }
+    .slide.dark .pagenum, .slide.cover .pagenum { color: var(--on-dark-3); }
+
+    /* Arquitectura (slide 13) */
+    .archflow { display: flex; align-items: stretch; gap: 0.4rem; flex-wrap: wrap; margin-top: 1.8rem; }
+    .anode {
+      flex: 1 1 10rem; min-width: 10rem; background: var(--aq-white);
+      border: 1px solid var(--border-subtle); border-radius: 14px;
+      padding: 0.9rem 1rem; box-shadow: var(--shadow-sm);
+    }
+    .anode.adds { border: 2px solid var(--aq-purple); }
+    .anode .tag {
+      display: inline-block; font-family: "Lexend", sans-serif; font-size: 0.6rem;
+      font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      border-radius: 999px; padding: 0.1rem 0.6rem; margin-bottom: 0.45rem;
+      background: var(--aq-blue-light); color: var(--aq-blue-deep);
+    }
+    .anode.adds .tag { background: var(--aq-violet-light); color: var(--aq-purple); }
+    .anode .nt { font-family: "Lexend", sans-serif; font-weight: 500; font-size: 0.98rem; color: var(--aq-purple-deep); }
+    .anode .nd { font-size: 0.78rem; color: var(--fg-2); line-height: 1.45; margin-top: 0.2rem; }
+    .aarrow { align-self: center; font-family: "Lexend", sans-serif; font-weight: 300; font-size: 1.5rem; color: var(--aq-blue); flex: 0 0 auto; }
+    @media (max-width: 900px) { .archflow { flex-direction: column; } .aarrow { transform: rotate(90deg); align-self: center; } }
+
+    @media (max-width: 700px) {
+      .slide { padding: 6vh 6vw; min-height: auto; }
+      .statrow { gap: 1.4rem; }
+    }
+    @media print {
+      @page { size: 330mm 186mm; margin: 0; }
+      html { font-size: 11.5px; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .slide { min-height: 100vh; page-break-after: always; border: none; padding: 4vh 5vw; }
+      h1 { font-size: 3.2rem; }
+      h2 { font-size: 2rem; margin-bottom: 0.7rem; }
+      .lead { font-size: 1rem; }
+      .eyebrow { margin-bottom: 0.7rem; }
+      .live { margin-bottom: 0.9rem; }
+      .grid, .cast, .ladder, .versus, .stays, .timeline { gap: 0.7rem; margin-top: 1.1rem; }
+      .card, .cast .member, .rung, .versus .side, .offer-card, .phase { padding: 0.9rem 1rem; }
+      .punchline { margin-top: 1.2rem; padding: 0.9rem 1.2rem; font-size: 1.05rem; }
+      .statrow { margin-top: 1.1rem; gap: 1.8rem; }
+      .foot-note { margin-top: 1rem; }
+      .mathline, .archflow { margin-top: 1.1rem; }
+      .persona-hero { padding: 1.3rem 1.5rem; margin-top: 1rem; }
+      .pagenum { bottom: 0.8rem; }
+      .slide-mark { bottom: 0.8rem; }
+      .archflow { flex-direction: row; flex-wrap: nowrap; }
+      .aarrow { transform: none; }
+      .anode { padding: 0.55rem 0.7rem; min-width: 0; flex: 1 1 auto; }
+      .anode .nd { font-size: 0.68rem; }
+      .anode .nt { font-size: 0.85rem; }
+      .aarrow { font-size: 1.1rem; padding: 0 0.15rem; }
+      .phase h3 { font-size: 1.15rem; margin: 0.25rem 0 0.4rem; }
+      .card p, .cast p, .phase p, .rung p { font-size: 0.8rem; }
+      }
+  
+    /* Estelar: tabla de redención y supuestos */
+    .redeem-table { width: 100%; border-collapse: collapse; margin-top: 1.4rem; background: var(--aq-white);
+      border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); font-size: 0.92rem; }
+    .redeem-table th, .redeem-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border-subtle); text-align: left; }
+    .redeem-table th { font-family: "Lexend", sans-serif; font-weight: 500; font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--fg-3); background: var(--aq-bg); }
+    .redeem-table td.n { font-family: "Lexend", sans-serif; font-weight: 600; color: var(--aq-purple); text-align: right; }
+    .tbc { display: inline-block; font-family: "Lexend", sans-serif; font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; border-radius: 999px; padding: 0.08rem 0.55rem;
+      background: #FFF1E2; color: #A65410; vertical-align: middle; margin-left: 0.35rem; }
+    .slide.dark .tbc { background: rgba(255,210,169,0.18); color: var(--aq-peach-light); }
+    .cover .client { height: 40px; margin-bottom: 1.4rem; }
+    #s2 .statrow { margin-top: 1.2rem; }
+    #s2 .grid { margin-top: 1.2rem; }
+    #s2 .redeem-table { margin-top: 1rem; }
+    #s2 .redeem-table th, #s2 .redeem-table td { padding: 0.45rem 1rem; }
+    #s2 .foot-note { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 1 · Portada -->
+  <section id="s1" class="slide cover">
+    <img class="wordmark" src="logo-wordmark-white.svg" alt="Aquiva" />
+    <img class="client" src="img/logo-estelar-blanco.png" alt="Hoteles Estelar" />
+    <p class="eyebrow" style="color:#fff;">Propuesta para Hoteles Estelar</p>
+    <h1>Huésped Siempre Estelar, <em>conectado</em></h1>
+    <p class="sub">El programa que ya tienen, unido a cada recepción, cada restaurante y cada canal.</p>
+    <a class="live" href="index.html" target="_blank" rel="noopener"><span class="dot"></span> Software funcionando: todo en esta sesión es en vivo <span class="ext">↗</span></a>
+    <p class="credit">Aquiva · The AI-native partner for growth companies</p>
+  </section>
+
+  <!-- 2 · El punto de partida -->
+  <section id="s2" class="slide">
+    <p class="eyebrow">El punto de partida</p>
+    <h2>Estelar ya tiene un programa de lealtad <em>que funciona</em></h2>
+    <p class="lead">Huésped Siempre Estelar (HSE) existe, tiene reglas claras y una base
+    de afiliados. No venimos a reemplazarlo: venimos a conectarlo.</p>
+    <div class="statrow">
+      <div class="stat"><span class="n">50+</span><span class="l">años de hospitalidad</span></div>
+      <div class="stat"><span class="n">24</span><span class="l">hoteles</span></div>
+      <div class="stat"><span class="n">2</span><span class="l">países · Colombia y Perú</span></div>
+      <div class="stat"><span class="n">3</span><span class="l">programas · HSE, Puntos a Favor, SEC</span></div>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>Acumulación</h3><p>1 estrella por cada $1.000 COP (o S/ 1)
+      facturados en la estadía: alojamiento, A&amp;B, spa, room service, lavandería y más.</p></div>
+      <div class="card"><h3>Vigencia</h3><p>Las estrellas vencen a los 18 meses de
+      acumuladas. Las tarifas de OTAs, GDS y agencias no acumulan.</p></div>
+      <div class="card"><h3>Redención</h3><p>Noches de alojamiento según la categoría
+      del hotel, gestionadas en el portal hse.siempreestelar.com.</p></div>
+    </div>
+    <table class="redeem-table">
+      <thead><tr><th>Categoría de hotel</th><th style="text-align:right;">Estrellas por noche</th></tr></thead>
+      <tbody>
+        <tr><td>Esencial y Apartamentos</td><td class="n">5.000</td></tr>
+        <tr><td>Superior</td><td class="n">6.000</td></tr>
+        <tr><td>Resort y Prime</td><td class="n">8.000</td></tr>
+      </tbody>
+    </table>
+    <p class="foot-note">Reglas tomadas de las políticas públicas de siempreestelar.com (noviembre de 2026).</p>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">2 / 14</span>
+  </section>
+
+  <!-- 3 · Valentina -->
+  <section id="s3" class="slide">
+    <p class="eyebrow">Antes de hablar de plataformas</p>
+    <h2>Conozcan a <em>Valentina</em></h2>
+    <div class="persona-hero">
+      <div class="avatar">VR</div>
+      <div class="who">
+        <div class="name">Valentina Restrepo · HSE-100001 · nivel Oro</div>
+        <p class="tagline">"Cuando viajo por trabajo, Estelar es mi casa. Y siempre ceno en el hotel."</p>
+        <ul>
+          <li>Viaja seguido por trabajo y repite <strong>varios hoteles Estelar</strong> en distintas ciudades.</li>
+          <li>Tiene <strong>afinidad gastronómica</strong>: Maki Bar y Kuzina aparecen una y otra vez en su cuenta.</li>
+          <li>Reserva <strong>buena parte de sus noches por OTA</strong>. Esas noches no le suman estrellas, y nadie se lo explicó.</li>
+          <li>En cada check-in, la recepción ve una reserva, no a una huésped Oro con historia.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="punchline">Valentina es la huésped que Estelar quiere de vuelta. Hoy su historia
+    está repartida entre el PMS, el portal HSE y las cuentas de restaurante, y nadie la ve completa.</div>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">3 / 14</span>
+  </section>
+
+  <!-- 4 · Elenco -->
+  <section id="s4" class="slide">
+    <p class="eyebrow">El elenco de la demo</p>
+    <h2>Cinco huéspedes, <em>cinco oportunidades</em></h2>
+    <div class="cast">
+      <div class="member"><div class="head"><div class="avatar sm">VR</div><div><div class="name">Valentina Restrepo</div><div class="role">La protagonista · Oro</div></div></div>
+        <p>Mucha OTA y afinidad gastronómica. El caso para llevarla al canal directo.</p></div>
+      <div class="member"><div class="head"><div class="avatar sm">AG</div><div><div class="name">Andrés Gómez</div><div class="role">El techo · Titanio</div></div></div>
+        <p>Reserva directo y le gusta el spa. La referencia de valor del programa.</p></div>
+      <div class="member"><div class="head"><div class="avatar sm">CV</div><div><div class="name">Camila Vargas</div><div class="role">La recién llegada · Clásico</div></div></div>
+        <p>Lleva 8 noches. En la demo sube a Oro en vivo, desde la recepción.</p></div>
+      <div class="member"><div class="head"><div class="avatar sm">JC</div><div><div class="name">Jorge Castaño</div><div class="role">El Oro dormido</div></div></div>
+        <p>14 meses sin estadía y su nivel en riesgo. El momento de reconquistarlo.</p></div>
+      <div class="member"><div class="head"><div class="avatar sm">LF</div><div><div class="name">Lucía Fernández</div><div class="role">La leal por convenio · Lima</div></div></div>
+        <p>Llega por convenio o agencia. Fiel a Estelar, invisible para el programa.</p></div>
+    </div>
+    <p class="foot-note">Huéspedes ficticios, construidos para la demo.</p>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">4 / 14</span>
+  </section>
+
+  <!-- 5 · Lo que queda sin ver -->
+  <section id="s5" class="slide">
+    <p class="eyebrow">La oportunidad</p>
+    <h2>El programa vive <em>al lado</em> de la operación</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Un portal aparte</h3><p>El huésped consulta y redime en
+      hse.siempreestelar.com, separado de la reserva, de la recepción y del sitio de Estelar.</p></div>
+      <div class="card"><h3>Redención solo por noches</h3><p>Las estrellas que se ganan en
+      restaurantes y spa solo vuelven como noches de alojamiento. No hay forma de redimir
+      una experiencia en el momento.</p></div>
+      <div class="card"><h3>La OTA no acumula, pero nadie convierte</h3><p>La regla existe, pero
+      no hay una estrategia que le muestre al huésped OTA cuánto pierde y lo invite a reservar directo.</p></div>
+      <div class="card"><h3>Recepción sin vista 360</h3><p>Quien hace el check-in no ve nivel,
+      preferencias, consumos ni el riesgo de perder a un huésped valioso.</p></div>
+    </div>
+    <div class="punchline">Conectar el programa convierte estas cuatro brechas en variables que
+    se miden: reconocimiento por huésped, mezcla de canales y valor por nivel.</div>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">5 / 14</span>
+  </section>
+
+  <!-- 6 · La matemática -->
+  <section id="s6" class="slide">
+    <p class="eyebrow">El argumento de presupuesto</p>
+    <h2>La matemática, antes que la plataforma</h2>
+    <p class="lead">Un ejemplo trabajado por cada 10.000 noches que hoy entran por OTA. Las cifras
+    son ilustrativas; el discovery las reemplaza con la mezcla de canales real de Estelar:</p>
+    <div class="mathline">
+      <div class="box"><div class="n">10.000</div><div class="l">noches vía OTA / año</div></div>
+      <div class="op">×</div>
+      <div class="box"><div class="n">$ 400.000</div><div class="l">tarifa promedio (ADR, COP)</div></div>
+      <div class="op">×</div>
+      <div class="box loss"><div class="n">~18% <span class="tbc">a confirmar</span></div><div class="l">comisión OTA</div></div>
+      <div class="op">=</div>
+      <div class="box loss"><div class="n">$ 720 M</div><div class="l">comisión pagada / año</div></div>
+    </div>
+    <div class="mathline">
+      <div class="box"><div class="n">10–20%</div><div class="l">shift a directo (benchmark, 12–18 meses)</div></div>
+      <div class="op">→</div>
+      <div class="box gain"><div class="n">$ 72–144 M</div><div class="l">recuperados / año, cada 10.000 noches OTA</div></div>
+    </div>
+    <div class="punchline">Y eso es solo la comisión: en una reserva OTA el intermediario se queda
+    con la relación con el huésped. La reserva directa se la devuelve a Estelar, con su correo,
+    sus preferencias y su historia.</div>
+    <p class="foot-note">Estimaciones modeladas con benchmarks de programas de reserva directa. No son datos de Hoteles Estelar.</p>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">6 / 14</span>
+  </section>
+
+  <!-- 7 · La propuesta -->
+  <section id="s7" class="slide">
+    <p class="eyebrow">La propuesta</p>
+    <h2>HSE sobre <em>Salesforce Loyalty Management</em> y Data Cloud</h2>
+    <p class="lead">Las mismas reglas que Estelar ya definió, corriendo en una plataforma que
+    conecta al programa con cada punto de contacto.</p>
+    <div class="grid g4">
+      <div class="card"><h3>Recepción 360</h3><p>Nivel, estrellas, preferencias, consumos
+      y alertas de riesgo en el check-in. Redención con un clic.</p></div>
+      <div class="card"><h3>Ofertas con motivo</h3><p>Aniversario, inactividad, huésped OTA,
+      afinidad gastronómica o de spa. Cada oferta dice por qué aparece.</p></div>
+      <div class="card"><h3>Restaurantes y spa</h3><p>Cada consumo suma estrellas en el
+      momento y alimenta el perfil. Maki Bar, Kuzina, Bulería y Tonnarello dejan de ser cuentas sueltas.</p></div>
+      <div class="card"><h3>ROI del canal directo</h3><p>Comisión pagada, ahorro proyectado,
+      pasivo de estrellas y valor por nivel, en un tablero vivo.</p></div>
+    </div>
+    <div class="ladder">
+      <div class="rung"><div class="tname">Clásico</div><div class="req">Desde la inscripción</div><p>Tarifa afiliado y estrellas en cada consumo.</p></div>
+      <div class="rung gold"><div class="tname">Oro</div><div class="req">10+ noches en 12 meses</div><p>Upgrade y late checkout sujetos a disponibilidad.</p></div>
+      <div class="rung diamond"><div class="tname">Titanio</div><div class="req">25+ noches en 12 meses</div><p>Desayuno incluido y flexibilidad en redenciones.</p></div>
+    </div>
+    <p class="foot-note">Niveles y umbrales: propuesta para la demo <span class="tbc">a confirmar con Estelar</span>.
+    Titanio y sus beneficios aparecen en las políticas actuales de HSE.</p>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">7 / 14</span>
+  </section>
+
+  <!-- 8 · Demo: Guest 360 -->
+  <section id="s8" class="slide">
+    <a class="live" href="https://aq1784554373641.lightning.force.com/lightning/n/EST_Guest360" target="_blank" rel="noopener"><span class="dot"></span> Demo en vivo · Huésped 360 <span class="ext">↗</span></a>
+    <p class="eyebrow">Paso 1 · Salesforce</p>
+    <h2>Valentina, <em>completa</em>, en una sola pantalla</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Nivel y estrellas</h3><p>Saldo, noches en los últimos 12 meses y
+      cuánto le falta para el siguiente nivel.</p></div>
+      <div class="card"><h3>Historia en todos los hoteles</h3><p>Cada estadía y cada consumo, con
+      el canal de reserva marcado: directo, OTA o convenio.</p></div>
+      <div class="card"><h3>Ofertas con motivo</h3><p>"Reserva directo y gana estrellas por tu
+      alojamiento": la oferta aparece porque la mayoría de sus noches vienen de OTA.</p></div>
+    </div>
+    <div class="punchline">Lo que antes estaba en tres sistemas, ahora es una sola historia.</div>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">8 / 14</span>
+  </section>
+
+  <!-- 9 · Demo: Recepción -->
+  <section id="s9" class="slide">
+    <a class="live" href="frontdesk.html" target="_blank" rel="noopener"><span class="dot"></span> Demo en vivo · Consola de recepción <span class="ext">↗</span></a>
+    <p class="eyebrow">Paso 2 · La recepción</p>
+    <h2>Camila sube a Oro <em>en el check-out</em></h2>
+    <p class="lead">Simulamos lo que en producción llega del PMS: una estadía directa de
+    Camila. Las estrellas se acreditan y el nivel sube en el momento, sin procesos batch.</p>
+    <div class="versus">
+      <div class="side win"><span class="chip direct">Directo</span>
+        <div class="rate">1 <small>estrella por cada $1.000</small></div>
+        <p class="note">Alojamiento y consumos acumulan. Estelar no paga comisión.</p></div>
+      <div class="side"><span class="chip ota">OTA</span>
+        <div class="rate">0 <small>estrellas en alojamiento</small></div>
+        <p class="note">Regla actual de HSE. La consola muestra la comisión pagada y cuántas
+        estrellas habría ganado el huésped reservando directo.</p></div>
+    </div>
+    <div class="punchline">La recepción también redime: un late checkout o una cena en Maki Bar,
+    aplicados con un clic y con bono emitido al instante.</div>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">9 / 14</span>
+  </section>
+
+  <!-- 10 · Demo: Portal -->
+  <section id="s10" class="slide">
+    <a class="live" href="account.html" target="_blank" rel="noopener"><span class="dot"></span> Demo en vivo · Portal del huésped <span class="ext">↗</span></a>
+    <p class="eyebrow">Paso 3 · El huésped</p>
+    <h2>El programa, <em>en manos del huésped</em></h2>
+    <div class="grid g3">
+      <div class="card"><h3>Inscripción real</h3><p>Desde la <a href="index.html" target="_blank" rel="noopener">landing</a>:
+      la membresía se crea en Salesforce con 500 estrellas de bienvenida.</p></div>
+      <div class="card"><h3>Su cuenta, sin otro portal</h3><p>Nivel, estrellas, ofertas para
+      ella y su historia en todos los hoteles. Entra con su correo o su número HSE.</p></div>
+      <div class="card"><h3>Noches y experiencias</h3><p>Noches por categoría de hotel, como hoy,
+      más experiencias nuevas en restaurantes y spa.</p></div>
+    </div>
+    <p class="foot-note">Demo: valentina.restrepo@example.com o HSE-100001.</p>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">10 / 14</span>
+  </section>
+
+  <!-- 11 · Personalización -->
+  <section id="s11" class="slide">
+    <a class="live" href="https://aq1784554373641.lightning.force.com/lightning/n/EST_Guest360" target="_blank" rel="noopener"><span class="dot"></span> Demo en vivo · Ofertas por huésped <span class="ext">↗</span></a>
+    <p class="eyebrow">Personalización</p>
+    <h2>Cada oferta llega <em>con su motivo</em></h2>
+    <div class="grid g2">
+      <div class="offer-card"><h3>Jorge · Te extrañamos</h3><p class="why">Lleva 14 meses sin
+      estadía y su nivel Oro está en riesgo. Una oferta de regreso antes del corte anual.</p></div>
+      <div class="offer-card"><h3>Valentina · Reserva directo</h3><p class="why">La mayoría de sus
+      noches vienen de OTA y no acumulan. Le mostramos cuántas estrellas dejó de ganar.</p></div>
+      <div class="offer-card"><h3>Valentina · Ruta de los Sabores</h3><p class="why">Su gasto en
+      restaurantes Estelar la marca como huésped gastronómica: maridaje o cena con estrellas.</p></div>
+      <div class="offer-card"><h3>Andrés · Spa</h3><p class="why">Huésped Titanio con consumo
+      frecuente de spa: un tratamiento como beneficio de su nivel.</p></div>
+    </div>
+    <div class="punchline">El motivo es visible para la recepción y para el huésped. Nada de
+    promociones genéricas.</div>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">11 / 14</span>
+  </section>
+
+  <!-- 12 · Arquitectura -->
+  <section id="s12" class="slide">
+    <p class="eyebrow">Arquitectura</p>
+    <h2>Se conecta a lo que <em>Estelar ya opera</em></h2>
+    <div class="archflow">
+      <div class="anode have"><span class="tag">Ya lo tienen</span><div class="nt">PMS y motor de reservas</div><div class="nd">Estadías, folios y consumos de cada hotel</div></div>
+      <span class="aarrow">→</span>
+      <div class="anode adds"><span class="tag">Suma el programa</span><div class="nt">Loyalty Management</div><div class="nd">Miembros, estrellas, niveles, redenciones y bonos</div></div>
+      <span class="aarrow">→</span>
+      <div class="anode adds"><span class="tag">Suma el programa</span><div class="nt">Data Cloud</div><div class="nd">Perfil unificado y segmentos para personalizar</div></div>
+      <span class="aarrow">→</span>
+      <div class="anode adds"><span class="tag">Suma el programa</span><div class="nt">Canales</div><div class="nd">Web, recepción, WhatsApp, asistente Estela y correo</div></div>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>Integración por API</h3><p>El PMS envía la estadía al check-out. El
+      mapa de PMS y motor de reservas por hotel sale del discovery.</p></div>
+      <div class="card"><h3>Convive con lo actual</h3><p>Puntos a Favor y Siempre Estelar
+      Corporativo pueden migrar después, sobre la misma plataforma.</p></div>
+      <div class="card"><h3>Portal flexible</h3><p>Experience Cloud o headless dentro de
+      hotelesestelar.com, como en esta demo.</p></div>
+    </div>
+    <img class="slide-mark" src="logo-wordmark-indigo.svg" alt="" />
+    <span class="pagenum">12 / 14</span>
+  </section>
+
+  <!-- 13 · Economía + por qué es real -->
+  <section id="s13" class="slide dark">
+    <p class="eyebrow">El cierre en números</p>
+    <h2>La economía del programa, <em>en vivo</em></h2>
+    <div class="grid g3">
+      <div class="card"><div class="big leak">~18%</div><h3>Comisión por noche OTA</h3>
+        <p>La fuga, cuantificada por huésped, por hotel y por canal. <span class="tbc">a confirmar</span></p></div>
+      <div class="card"><div class="big">10–20%</div><h3>Volumen OTA que migra a directo</h3>
+        <p>Resultado benchmark en los primeros 12 a 18 meses.</p></div>
+      <div class="card"><div class="big">Pasivo</div><h3>Estrellas por vencer y por redimir</h3>
+        <p>El pasivo del programa y el valor por nivel, en el mismo tablero.</p></div>
+    </div>
+    <div class="statrow">
+      <div class="stat"><span class="n"><a href="https://aq1784554373641.lightning.force.com/lightning/n/EST_ROI" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px dotted #9DBDF0;">Tablero ROI en vivo ↗</a></span><span class="l">comisión pagada · ahorro proyectado · valor por nivel</span></div>
+    </div>
+    <div class="statrow">
+      <div class="stat"><span class="n">10</span><span class="l">años de Aquiva</span></div>
+      <div class="stat"><span class="n">1800+</span><span class="l">certificaciones</span></div>
+      <div class="stat"><span class="n">200+</span><span class="l">proyectos entregados</span></div>
+      <div class="stat"><span class="n">4.95/5</span><span class="l">CSAT</span></div>
+    </div>
+    <p class="foot-note">Cifras modeladas con fines ilustrativos; no son datos de Hoteles Estelar.
+    Aquiva trabaja con cadenas como IHG, Four Seasons y Sonesta.</p>
+    <img class="slide-mark" src="logo-wordmark-white.svg" alt="" />
+    <span class="pagenum">13 / 14</span>
+  </section>
+
+  <!-- 14 · Próximos pasos -->
+  <section id="s14" class="slide dark">
+    <p class="eyebrow">Próximos pasos</p>
+    <h2>Construyámoslo <em>juntos</em></h2>
+    <div class="timeline">
+      <div class="phase"><span class="ph">Semanas 1–2</span><h3>Discovery</h3>
+        <p>Mapear PMS y motor de reservas por hotel, la mezcla de canales y las reglas
+        vigentes de HSE, PAF y SEC.</p></div>
+      <div class="phase"><span class="ph">Semanas 3–8</span><h3>MVP</h3>
+        <p>HSE en Loyalty Management sobre un grupo piloto de hoteles: estadías reales,
+        recepción 360 y tablero ROI con sus números.</p></div>
+      <div class="phase"><span class="ph">Después</span><h3>Escala</h3>
+        <p>Los 24 hoteles, Colombia y Perú, personalización con Agentforce y los programas
+        corporativos sobre la misma plataforma.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:1.4rem;">
+      <div class="card"><h3>Qué confirmamos con Estelar</h3>
+        <p>Niveles y umbrales actuales de HSE · categoría de cada hotel · comisión OTA real ·
+        mezcla de canales · PMS y motor de reservas por hotel · un sponsor de negocio y uno de TI.</p></div>
+      <div class="card"><h3>Qué pone Aquiva</h3>
+        <p>Equipo con experiencia hotelera · aceleradores de implementación · este entorno
+        demo como punto de partida · delivery en Latinoamérica y en español.</p></div>
+    </div>
+    <div class="punchline" style="margin-top:1.8rem;">Huésped Siempre Estelar: el placer de
+    descubrir, y de ser reconocido en cada hotel.</div>
+    <p class="foot-note">Aquiva · The AI-native partner for growth companies · connect@aquiva.com</p>
+    <img class="slide-mark" src="logo-wordmark-white.svg" alt="" />
+    <span class="pagenum">14 / 14</span>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Huésped Siempre Estelar · Cada estadía cuenta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">
+      <img src="img/logo-estelar-blanco.png" alt="Hoteles Estelar" />
+      <span class="txt">
+        <span class="brand">Siempre Estelar</span>
+        <span class="program">Huésped</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="account.html" class="hide-sm">Ingresar</a>
+      <a href="#join" class="btn btn-gold btn-sm">Inscríbete</a>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <p class="eyebrow">Hoteles Estelar · Huésped Siempre Estelar</p>
+    <h1>El placer de descubrir,<br /><em>ahora te reconoce en cada hotel.</em></h1>
+    <p class="lead">
+      24 hoteles en Colombia y Perú, un solo perfil. Acumula estrellas en tu
+      estadía, en el restaurante y en el spa, y recibe ofertas pensadas para ti,
+      con el motivo a la vista.
+    </p>
+    <div class="cta">
+      <a href="#join" class="btn btn-gold">Inscríbete gratis: 500 estrellas de bienvenida</a>
+      <a href="account.html" class="btn btn-ghost">Ingresar a mi cuenta</a>
+    </div>
+  </section>
+
+  <!-- ===== Por qué ===== -->
+  <section class="section">
+    <h2 class="section-title center">Por qué Siempre Estelar</h2>
+    <p class="section-sub center">Un programa que entiende cómo viajas tú.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>⭐ 1 estrella por cada $1.000</h3>
+        <p>Acumulas en todo lo que facturas en el hotel al reservar directo en
+        hotelesestelar.com, por la Central de Reservas o por WhatsApp: alojamiento,
+        restaurantes, spa, room service y más.</p>
+      </div>
+      <div class="card">
+        <h3>🍽️ Tus sabores cuentan</h3>
+        <p>Maki Bar, Kuzina, Bulería, Tonnarello, Origen… cada cena en un
+        restaurante Estelar suma estrellas y le enseña al programa lo que te gusta.</p>
+      </div>
+      <div class="card">
+        <h3>🎯 Ofertas con motivo</h3>
+        <p>Nada de promociones genéricas: tu aniversario, tus destinos y tus gustos
+        deciden qué te ofrecemos, y siempre te decimos por qué.</p>
+      </div>
+      <div class="card">
+        <h3>🛎️ Redime en la recepción</h3>
+        <p>Noches gratis, upgrades, late checkout o un tratamiento de spa, aplicados
+        con un clic en la recepción. Sin portales aparte ni trámites.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Niveles ===== -->
+  <section class="section">
+    <h2 class="section-title center">Tres niveles, ascenso automático</h2>
+    <p class="section-sub center">Calificas por noches en los últimos 12 meses.</p>
+    <div class="cards">
+      <div class="card tier-card">
+        <span class="tier-badge clasico">Clásico</span>
+        <p class="nights mt">Desde la primera noche</p>
+        <ul>
+          <li>500 estrellas de bienvenida</li>
+          <li>Tarifa afiliado en canales directos</li>
+          <li>Estrellas en cada consumo</li>
+        </ul>
+      </div>
+      <div class="card tier-card oro">
+        <span class="tier-badge oro">Oro</span>
+        <p class="nights mt">10+ noches al año</p>
+        <ul>
+          <li>Todo lo de Clásico</li>
+          <li>Upgrade y late checkout sujetos a disponibilidad</li>
+          <li>Reconocimiento en tu aniversario</li>
+        </ul>
+      </div>
+      <div class="card tier-card titanio">
+        <span class="tier-badge titanio">Titanio</span>
+        <p class="nights mt">25+ noches al año</p>
+        <ul>
+          <li>Todo lo de Oro</li>
+          <li>Desayuno incluido</li>
+          <li>Flexibilidad en redenciones</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Destinos ===== -->
+  <section class="section center">
+    <p class="section-sub">Un solo programa en todos los destinos Estelar</p>
+    <div class="brands">
+      <span>Bogotá</span><span>Medellín</span><span>Cartagena</span><span>Santa Marta</span>
+      <span>Barranquilla</span><span>Cali</span><span>Manizales</span><span>Paipa</span>
+      <span>Ibagué</span><span>Villavicencio</span><span>Yopal</span><span>Lima</span>
+    </div>
+  </section>
+
+  <!-- ===== Inscripción ===== -->
+  <section class="section" id="join">
+    <div class="card">
+      <h2 class="section-title">Inscríbete en Siempre Estelar</h2>
+      <p class="section-sub">Es gratis. Te regalamos 500 estrellas de bienvenida.</p>
+      <form id="join-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="join-first">Nombre</label>
+            <input id="join-first" type="text" required autocomplete="given-name" />
+          </div>
+          <div class="field">
+            <label for="join-last">Apellido</label>
+            <input id="join-last" type="text" required autocomplete="family-name" />
+          </div>
+          <div class="field">
+            <label for="join-email">Correo electrónico</label>
+            <input id="join-email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="join-city">Ciudad de residencia (opcional)</label>
+            <input id="join-city" type="text" placeholder="Bogotá, Colombia" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark mt" id="join-btn">Crear mi membresía</button>
+      </form>
+      <div id="join-result" class="hidden"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="rule"></div>
+    <p>Huésped Siempre Estelar · Prototipo de concepto · Preparado por Aquiva Labs</p>
+    <p class="mt">Prueba de concepto: no es un sitio oficial de Hoteles Estelar.</p>
+  </footer>
+
+  <!-- Backstage (herramientas de demo) -->
+  <button class="backstage-toggle" id="backstage-toggle" title="Backstage">⚙</button>
+  <div class="backstage-menu" id="backstage-menu">
+    <p class="title">Backstage · demo</p>
+    <a href="frontdesk.html">🛎️ Consola de recepción</a>
+    <a href="deck.html">🎞️ Presentación (deck)</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

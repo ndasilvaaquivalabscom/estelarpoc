@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Mi cuenta · Huésped Siempre Estelar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">
+      <img src="img/logo-estelar-blanco.png" alt="Hoteles Estelar" />
+      <span class="txt">
+        <span class="brand">Siempre Estelar</span>
+        <span class="program">Huésped</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="hide-sm">Inicio</a>
+      <a href="#" id="signout" class="btn btn-ghost btn-sm hidden">Salir</a>
+    </nav>
+  </header>
+
+  <!-- ===== Ingreso ===== -->
+  <section class="section" id="login-view">
+    <div class="card" style="max-width: 30rem; margin: 2rem auto;">
+      <h2 class="section-title">Ingresa a tu cuenta</h2>
+      <p class="section-sub">Usa tu número de membresía o el correo de tu cuenta.</p>
+      <form id="login-form">
+        <div class="field">
+          <label for="login-key">Número de membresía o correo</label>
+          <input id="login-key" type="text" placeholder="HSE-100001 o tu@correo.com" required />
+        </div>
+        <button type="submit" class="btn btn-dark mt" id="login-btn">Ingresar</button>
+      </form>
+      <div id="login-error" class="hidden"></div>
+      <p class="small muted mt">Demo: prueba con <strong>valentina.restrepo@example.com</strong> o <strong>HSE-100001</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ===== Vista del miembro ===== -->
+  <section class="section hidden" id="member-view">
+    <div class="member-hero">
+      <div>
+        <h2 id="m-name"></h2>
+        <p class="meta" id="m-meta"></p>
+        <p class="meta" id="m-prefs"></p>
+      </div>
+      <div class="right">
+        <span class="tier-badge" id="m-tier"></span>
+        <div class="points" id="m-points"></div>
+        <div class="meta" id="m-progress"></div>
+      </div>
+    </div>
+
+    <div id="m-risk" class="notice notice-warn hidden"></div>
+
+    <div class="kpis" id="m-kpis"></div>
+
+    <div id="m-offers-wrap" class="hidden">
+      <h2 class="section-title" style="font-size:1.4rem;">Para ti</h2>
+      <p class="section-sub">Ofertas que salen de tu propia historia con nosotros, con el motivo a la vista.</p>
+      <div id="m-offers"></div>
+    </div>
+
+    <h2 class="section-title" style="font-size:1.4rem;">Redime tus estrellas</h2>
+    <p class="section-sub">Noches gratis según la categoría del hotel, más experiencias en restaurantes y spa.</p>
+    <div id="m-rewards"></div>
+    <div id="m-redeem-result" class="hidden"></div>
+
+    <div id="m-vouchers-wrap" class="hidden">
+      <h2 class="section-title" style="font-size:1.4rem;">Tus bonos</h2>
+      <div id="m-vouchers" class="mt"></div>
+    </div>
+
+    <h2 class="section-title" style="font-size:1.4rem;">Tu historia con nosotros</h2>
+    <p class="section-sub">Cada estadía, cada hotel, cada ciudad: una sola historia.</p>
+    <div style="overflow-x:auto;">
+      <table class="history">
+        <thead>
+          <tr>
+            <th>Fecha</th><th>Actividad</th><th>Hotel</th><th>Ciudad</th>
+            <th>Canal</th><th class="num">Noches</th><th class="num">Valor</th><th class="num">Estrellas</th>
+          </tr>
+        </thead>
+        <tbody id="m-history"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="rule"></div>
+    <p>Huésped Siempre Estelar · Prototipo de concepto · Preparado por Aquiva Labs</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

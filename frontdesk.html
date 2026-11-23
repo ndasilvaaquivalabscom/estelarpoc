@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Consola de recepción · Huésped Siempre Estelar (backstage)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">
+      <img src="img/logo-estelar-blanco.png" alt="Hoteles Estelar" />
+      <span class="txt">
+        <span class="brand">Recepción</span>
+        <span class="program">Backstage · demo</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="hide-sm">Landing</a>
+      <a href="account.html" class="hide-sm">Portal del huésped</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">Consola de recepción</h2>
+    <p class="section-sub">
+      Lo que ve el equipo de recepción en el check-in: nivel, saldo, preferencias y
+      redenciones con un clic. Incluye el simulador de estadías que alimenta toda la demo.
+    </p>
+
+    <div class="card">
+      <div class="form-grid">
+        <div class="field">
+          <label for="fd-guest">Huésped</label>
+          <select id="fd-guest"></select>
+        </div>
+        <div class="field" style="align-self:end;">
+          <button class="btn btn-dark" id="fd-load">Abrir huésped</button>
+          <button class="btn btn-ghost" id="fd-reset" style="color:var(--bad); border-color:var(--bad);"
+            title="Backstage: devuelve este huésped a su estado inicial">↺ Restaurar huésped</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="fd-error" class="hidden"></div>
+
+    <div id="fd-panel" class="hidden">
+      <!-- Tarjeta del huésped -->
+      <div class="member-hero mt">
+        <div>
+          <h2 id="fd-name"></h2>
+          <p class="meta" id="fd-meta"></p>
+          <p class="meta" id="fd-prefs"></p>
+          <p class="meta" id="fd-vouchers"></p>
+        </div>
+        <div class="right">
+          <span class="tier-badge" id="fd-tier"></span>
+          <div class="points" id="fd-points"></div>
+          <div class="meta" id="fd-progress"></div>
+        </div>
+      </div>
+      <div id="fd-risk" class="notice notice-warn hidden"></div>
+
+      <div class="cards mt">
+        <!-- Redención con un clic -->
+        <div class="card">
+          <h3>🛎️ Aplicar un beneficio ahora</h3>
+          <p class="small muted">Un clic en el punto de servicio. El bono se emite al instante.</p>
+          <div id="fd-rewards" class="mt"></div>
+        </div>
+
+        <!-- Simulador de estadía -->
+        <div class="card">
+          <h3>🧾 Registrar una estadía (simulación del PMS)</h3>
+          <p class="small muted">En producción este registro llega solo desde el PMS de cada
+          hotel en el check-out. Esta pantalla simula esa integración y sirve además como
+          respaldo manual.</p>
+          <div class="form-grid mt">
+            <div class="field">
+              <label for="fd-property">Hotel</label>
+              <select id="fd-property"></select>
+            </div>
+            <div class="field">
+              <label for="fd-channel">Canal de reserva</label>
+              <select id="fd-channel">
+                <option value="Direct">Directo (web, central, WhatsApp)</option>
+                <option value="OTA">OTA (Booking, Expedia…)</option>
+                <option value="Partner">Convenio / agencia</option>
+              </select>
+            </div>
+            <div class="field hidden" id="fd-partner-wrap">
+              <label for="fd-partner">Convenio o agencia</label>
+              <select id="fd-partner">
+                <option>Alianza Bancos Aval</option>
+                <option>Alianza Compensar</option>
+                <option>Agencia de viajes</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fd-nights">Noches</label>
+              <input id="fd-nights" type="number" min="1" value="3" />
+            </div>
+            <div class="field">
+              <label for="fd-room">Alojamiento (COP)</label>
+              <input id="fd-room" type="number" min="1" step="10000" value="1350000" />
+            </div>
+            <div class="field">
+              <label for="fd-spa">Spa (COP)</label>
+              <input id="fd-spa" type="number" min="0" step="10000" value="0" />
+            </div>
+            <div class="field">
+              <label for="fd-dining">Restaurantes (COP)</label>
+              <input id="fd-dining" type="number" min="0" step="10000" value="0" />
+            </div>
+            <div class="field">
+              <label for="fd-excursions">Recreación y experiencias (COP)</label>
+              <input id="fd-excursions" type="number" min="0" step="10000" value="0" />
+            </div>
+          </div>
+          <button class="btn btn-dark mt" id="fd-post">Registrar estadía y otorgar estrellas</button>
+        </div>
+      </div>
+
+      <div id="fd-result" class="hidden"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="rule"></div>
+    <p>Herramienta backstage · POC Huésped Siempre Estelar · Aquiva Labs</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="frontdesk.js"></script>
+</body>
+</html>
