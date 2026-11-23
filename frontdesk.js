@@ -18,6 +18,8 @@ async function init() {
     if (!guestsResp.ok) throw new Error(guests.error || 'No pudimos cargar los huéspedes.');
     if (!propsResp.ok) throw new Error(props.error || 'No pudimos cargar los hoteles.');
 
+    // Elenco en orden del guion: HSE-100001 (Valentina) primero.
+    guests.sort((a, b) => a.membershipNumber.localeCompare(b.membershipNumber));
     el('fd-guest').innerHTML = guests.map((g) =>
       `<option value="${esc(g.membershipNumber)}">${esc(g.name)} · ${esc(g.membershipNumber)} · ${esc(g.tier)}</option>`
     ).join('');
